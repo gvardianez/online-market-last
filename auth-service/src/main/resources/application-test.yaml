@@ -1,0 +1,32 @@
+server:
+  port: 8187
+  servlet:
+    context-path: /market-auth
+spring:
+  datasource:
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:mem:market-auth-test;MODE=PostgreSQL
+    username: sa
+    password:
+  jpa:
+    show-sql: false
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.H2Dialect
+  h2:
+    console:
+      enabled: true
+      settings:
+        web-allow-others: false
+jwt:
+  access:
+    lifetime: 1000
+    secret: h4f8093h4f983yhrt9834hr0934hf0hf493g493gf438rh438th34g34g
+  flyway:
+    locations: classpath:/db/test
+#kafka:
+#  server: "localhost:9092"
+#  producer: "auth-service"
+#redis:
+#  host: "localhost"
+#  port: 6380

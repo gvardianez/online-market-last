@@ -1,0 +1,26 @@
+version: '3'
+
+services:
+  zipkin:
+    image: openzipkin/zipkin
+    ports:
+      - "9411:9411"
+
+  redis:
+    image: 'bitnami/redis:latest'
+    environment:
+      - ALLOW_EMPTY_PASSWORD=yes
+    hostname: "localhost"
+    ports:
+      - "6380:6379"
+
+  wiremock:
+    image: rodolpheche/wiremock
+    ports:
+      - '8180:8080'
+    volumes:
+      - ./wiremock/__files:/home/wiremock/__files
+      - ./wiremock/mappings:/home/wiremock/mappings
+    command:
+      - -verbose
+      - -global-response-templating

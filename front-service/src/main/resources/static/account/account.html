@@ -1,0 +1,34 @@
+<div>
+    <p></p>
+    <h3>Личные данные</h3>
+    <br>
+    <span>Ваш логин: {{userProfile.username}}</span>
+    <br>
+    <br>
+    <span>Ваш Email: {{userProfile.email}} <button type="submit" ng-show="!isEmailConfirmed()" ng-click="confirmEmail()"
+                                                   class="btn btn-primary mb-3">Подтвердить почту</button> </span>
+    <br>
+
+    <p></p>
+
+    <h5>Сменить пароль</h5>
+    <p></p>
+    <form ng-submit="changePassword()">
+        <input type="password" class="form-control" required="required" id="oldUserPassword"
+               ng-model="changePasswordRequestDto.oldPassword" placeholder="Старый пароль">
+        <br>
+        <input type="password" class="form-control" required="required" id="newUserPassword"
+               ng-model="changePasswordRequestDto.newPassword" placeholder="Новый пароль">
+        <br>
+        <input type="password" class="form-control" required="required" id="newConfirmUserPassword"
+               ng-model="changePasswordRequestDto.confirmNewPassword" placeholder="Подтвердите новый пароль">
+        <br>
+        <button type="submit" class="btn btn-primary mb-3">Изменить пароль</button>
+    </form>
+    <br>
+    <span>Для восстановления пароля нажмите (новый пароль будет выслан на почту указанную при регистрации. Почта должна быть подтверждена)</span>
+    <br>
+    <br>
+    <button class="btn btn-danger" ng-show="isEmailConfirmed()" ng-click="recoverPassword()">Восстановить пароль
+    </button>
+</div>

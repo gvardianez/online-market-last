@@ -1,0 +1,7 @@
+databaseChangeLog:
+  - include:
+      file: db/changelog/test-changeset/create-analytical-data-table.yaml
+  - include:
+      file: db/changelog/test-changeset/add-columns-analytical-data-table.yaml
+  - include:
+      file: db/changelog/test-changeset/add-test-resources.sql

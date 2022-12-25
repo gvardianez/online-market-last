@@ -1,0 +1,80 @@
+<div>
+    <p></p>
+    <h3>Корзина</h3>
+    <p></p>
+    <div ng-show="cart.items.length > 0">
+        <table class="table table-hover">
+            <thead>
+            <tr>
+                <td>Товар</td>
+                <td>Цена за единицу</td>
+                <td>Суммарная цена</td>
+                <td>Количество</td>
+                <td>Установить количество</td>
+                <td>Удалить из корзины</td>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="ci in cart.items">
+                <td>{{ci.productTitle}}</td>
+                <td>{{ci.pricePerProduct}}</td>
+                <td>{{ci.pricePerProduct + ' x ' + ci.quantity + ' = ' + ci.price}}</td>
+                <td>
+                    <button class="btn btn-primary" ng-click="changeQuantity(ci.productId, -1)">-</button>
+                    {{ci.quantity}}
+                    <button class="btn btn-primary" ng-click="changeQuantity(ci.productId, 1)">+</button>
+                </td>
+
+                <td>
+                    <form class="row g-3" ng-submit="setNewQuantity(ci.productId, newQuantity)">
+                        <div class="col-auto">
+                            <input type="number" class="form-control" ng-model="newQuantity"
+                                   placeholder="Новое количество">
+                        </div>
+                        <div class="col-auto">
+                            <button ng-click="setNewQuantity(ci.productId, newQuantity)" class="btn btn-primary">
+                                ОК
+                            </button>
+                        </div>
+                    </form>
+                </td>
+
+                <td>
+                    <button class="btn btn-danger" ng-click="removeProductFromCart(ci.productId)">Удалить</button>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>Итого:</td>
+                <td>{{cart.totalPrice}}</td>
+                <td></td>
+                <td></td>
+                <td>
+                    <button class="btn btn-danger" ng-click="clearCart()">Очистить корзину</button>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        <br>
+        <h3>Детали заказа</h3>
+        <form>
+            <input class="form-control" type="text" required="required" placeholder="Номер телефона"
+                   ng-model="orderDetails.phone">
+            <p></p>
+            <input class="form-control" type="text" required="required" placeholder="Адрес"
+                   ng-model="orderDetails.address">
+            <p></p>
+            <input class="form-control" type="text"
+                   placeholder="Email (оставьте поле пустым, чтобы использовать адрес почты указанный при регистрации)"
+                   ng-model="orderDetails.email">
+        </form>
+
+        <p></p>
+        <button class="btn btn-secondary" ng-click="guestCreateOrder()" ng-show="!isUserLoggedIn()">Оформить заказ
+        </button>
+        <button class="btn btn-primary" ng-click="createOrder()" ng-show="isUserLoggedIn()">Оформить заказ</button>
+    </div>
+    <div ng-show="cart.items.length == 0">
+        <p>Ваша корзина пуста</p>
+    </div>
+</div>

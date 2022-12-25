@@ -1,0 +1,30 @@
+{
+  "mappings": [
+    {
+      "request": {
+        "method": "POST",
+        "urlPath": "/api/v1/products/get-products"
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "products-list-for-analytical.json",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "urlPath": "/api/v1/account"
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "bob-user-profile-dto.json",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      }
+    }
+  ]
+}

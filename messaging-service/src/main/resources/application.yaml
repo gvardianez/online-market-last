@@ -1,0 +1,31 @@
+#server:
+#  port: 8192
+#  servlet:
+#    context-path: /market-messaging
+#spring:
+#  zipkin:
+#    base-url: http://192.168.99.100:9411/
+#  kafka:
+#    bootstrap-servers: "192.168.99.100:9092"
+#    consumer:
+#      auto-offset-reset: earliest
+#      group-id: "email.broker"
+#  application:
+#    name: messaging-service
+#mail:
+#  host: "smtp.gmail.com"
+#  port: 587
+#  auth: "true"
+#  starttls.enable: "true"
+#  debug.enable: "true"
+#  protocol: "smtp"
+#eureka:
+#  instance:
+#    hostname: localhost
+#  client:
+#    serviceUrl:
+#      defaultZone: http://localhost:8761/eureka
+#      fetchRegistry: false
+#news:
+#  products:
+#    scheduler: 0 0 12 * * *

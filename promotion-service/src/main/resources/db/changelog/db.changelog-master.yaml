@@ -1,0 +1,5 @@
+databaseChangeLog:
+  - include:
+      file: db/changelog/changeset/create-promotion-and-promotions-items-tables.yaml
+  - include:
+      file: db/changelog/changeset/add-column-promotion-table.yaml

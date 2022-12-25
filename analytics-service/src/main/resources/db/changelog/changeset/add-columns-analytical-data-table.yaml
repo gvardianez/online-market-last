@@ -1,0 +1,14 @@
+databaseChangeLog:
+  - changeSet:
+      id: add-columns-created-updated
+      author: Alov
+      changes:
+        - addColumn:
+            tableName: analytical_data
+            columns:
+              - column:
+                  name: created_at
+                  type: timestamp
+              - column:
+                  name: updated_at
+                  type: timestamp
