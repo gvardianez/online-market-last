@@ -1,0 +1,5 @@
+databaseChangeLog:
+  - include:
+      file: db/changelog/changeset/create-analytical-data-table.yaml
+  - include:
+      file: db/changelog/changeset/add-columns-analytical-data-table.yaml

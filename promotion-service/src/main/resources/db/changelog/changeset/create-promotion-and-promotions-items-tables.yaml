@@ -1,0 +1,73 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-promotion-and-promotions-items-tables
+      author: Alov
+      changes:
+        - createTable:
+            tableName: promotion
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+                    unique: true
+              - column:
+                  name: description
+                  type: varchar
+              - column:
+                  name: start_at
+                  type: timestamp
+                  constraints:
+                    nullable: false
+              - column:
+                  name: end_at
+                  type: timestamp
+                  constraints:
+                    nullable: false
+              - column:
+                  name: created_at
+                  type: timestamp
+                  defaultValue: now
+              - column:
+                  name: updated_at
+                  type: timestamp
+                  defaultValue: now
+        - createTable:
+            tableName: promotions_items
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+                    unique: true
+              - column:
+                  name: promotion_id
+                  type: bigint
+                  constraints:
+                    foreignKeyName: promotion_fk
+                    referencedTableName: promotion
+                    referencedColumnNames: id
+              - column:
+                  name: product_id
+                  type: bigint
+                  constraints:
+                    nullable: false
+              - column:
+                  name: discount
+                  type: float(2)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: created_at
+                  type: timestamp
+                  defaultValue: now
+              - column:
+                  name: updated_at
+                  type: timestamp
+                  defaultValue: now

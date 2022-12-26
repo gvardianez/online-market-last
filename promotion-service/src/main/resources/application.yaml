@@ -1,0 +1,38 @@
+#server:
+#  port: 8183
+#  servlet:
+#    context-path: /market-promotion
+#spring:
+#  datasource:
+#    driver-class-name: org.postgresql.Driver
+#    url: jdbc:postgresql://192.168.99.100:5436/postgres
+#    username: postgres
+#    password: postgres
+#  zipkin:
+#    base-url: http://192.168.99.100:9411/
+#  jpa:
+#    show-sql: true
+#    properties:
+#      hibernate:
+#        dialect: org.hibernate.dialect.PostgreSQLDialect
+#  application:
+#    name: promotion-service
+#  liquibase:
+#    enabled: true
+#integrations:
+#  product-service:
+#    url: http://core-service/market-core/
+#    connect-timeout: 500
+#    read-timeout: 10000
+#    write-timeout: 5000
+#kafka:
+#  server: "192.168.99.100:9092"
+#  producer: "promotion-service"
+#eureka:
+#  instance:
+#    hostname: localhost
+#  client:
+#    serviceUrl:
+#      defaultZone: http://localhost:8761/eureka
+#      fetchRegistry: false
+

@@ -1,0 +1,46 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-analytical-data
+      author: Alov
+      changes:
+        - createTable:
+            tableName: analytical_data
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+                    unique: true
+              - column:
+                  name: product_id
+                  type: bigint
+                  constraints:
+                    nullable: false
+              - column:
+                  name: order_id
+                  type: bigint
+                  constraints:
+                    nullable: false
+              - column:
+                  name: username
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: quantity
+                  type: int
+                  constraints:
+                    nullable: false
+              - column:
+                  name: price_per_product
+                  type: numeric(8, 2)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: bought_at
+                  type: timestamp
+                  constraints:
+                    nullable: false

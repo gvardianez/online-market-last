@@ -6,7 +6,21 @@
 
     <groupId>ru.alov</groupId>
     <artifactId>MyMarket</artifactId>
+    <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>api</module>
+        <module>auth-service</module>
+        <module>cart-service</module>
+        <module>core-service</module>
+        <module>front-service</module>
+        <module>gateway-service</module>
+        <module>discovery-service</module>
+        <module>config-server</module>
+        <module>analytics-service</module>
+        <module>messaging-service</module>
+        <module>promotion-service</module>
+    </modules>
 
     <properties>
         <maven.compiler.source>11</maven.compiler.source>

@@ -1,0 +1,22 @@
+<div>
+    <p></p>
+    <h3>Регистрация</h3>
+    <p></p>
+    <form ng-submit="newRegistration()">
+        <br>
+        <input type="text" class="form-control" required="required" id="newUserUsername"
+               ng-model="registerUserDto.username" placeholder="Имя">
+        <br>
+        <input type="text" class="form-control" required="required" id="newUserEmail" ng-model="registerUserDto.email"
+               placeholder="Email">
+        <br>
+        <input type="password" class="form-control" required="required" id="newUserPassword"
+               ng-model="registerUserDto.password" placeholder="Пароль">
+        <br>
+        <input type="password" class="form-control" required="required" id="newUserPasswordConfirm"
+               ng-model="registerUserDto.confirmPassword" placeholder="Подтвердите пароль">
+        <br>
+        <button type="submit" class="btn btn-primary mb-3">Зарегистрироваться</button>
+
+    </form>
+</div>

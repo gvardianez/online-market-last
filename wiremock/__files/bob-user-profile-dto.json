@@ -1,0 +1,9 @@
+{
+  "userId": 3,
+  "username": "bob",
+  "email": "bob_johnson@gmail.com",
+  "roles": [
+    "ROLE_USER"
+  ],
+  "emailStatus": "MAIL_NOT_CONFIRMED"
+}
